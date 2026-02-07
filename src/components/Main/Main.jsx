@@ -22,19 +22,19 @@ const Main = () => {
             <p>How can i Help you Today?</p>
         </div>
         <div className="cards">
-            <div className="card">
+            <div className="card" onClick={() => setInput("Suggest best places to visit")}>
                 <p>Suggest best places to visit</p>
                 <img src={assets.compass_icon} alt="" />
             </div>
-            <div className="card">
+            <div className="card" onClick={() => setInput("Briefly explain the concept of Urbanisation")}>
                 <p>Briefly explain the concept of Urbanisation</p>
                 <img src={assets.bulb_icon} alt="" />
             </div>
-            <div className="card">
+            <div className="card" onClick={() => setInput("Brainstorm team bonding activities for our work retreat")}>
                 <p>Brainstorm team bonding activities for our work retreat</p>
                 <img src={assets.message_icon} alt="" />
             </div>
-            <div className="card">
+            <div className="card" onClick={() => setInput("Improve the readability of the following code")}>
                 <p>Improve the readability of the following code</p>
                 <img src={assets.code_icon} alt="" />
             </div>
@@ -62,7 +62,7 @@ const Main = () => {
         
         <div className="main-bottom">
           <div className="search-box">
-            <input onChange={(e)=>setInput(e.target.value)} value={input} type="text" placeholder='Enter a prompt here'/>
+            <input onChange={(e)=>setInput(e.target.value)} onKeyDown={(e)=>e.key === 'Enter' && onSent()} value={input} type="text" placeholder='Enter a prompt here'/>
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
